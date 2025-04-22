@@ -84,7 +84,7 @@ body {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   display: block;
-  margin: -16px 0 0;
+  margin: -20px 0 0;
 }
 
 @keyframes rainbow {
