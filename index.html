@@ -9,7 +9,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         }
         
         body {
@@ -55,9 +55,15 @@
         .colorful-text {
             font-size: 5rem;
             font-weight: bold;
-            background-image: linear-gradient(90deg, #ff00cc, #3333ff, #ff6600, #cc33ff);
-            background-size: 400% 400%;
-            animation: gradient 5s ease infinite;
+            background: linear-gradient(90deg, 
+                rgba(112, 48, 255, 1) 0%, 
+                rgba(47, 201, 226, 1) 20%, 
+                rgba(149, 55, 196, 1) 40%, 
+                rgba(233, 30, 99, 1) 60%, 
+                rgba(255, 87, 51, 1) 80%, 
+                rgba(255, 193, 7, 1) 100%);
+            background-size: 600% 100%;
+            animation: rainbow 8s linear infinite;
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -65,16 +71,9 @@
             margin: 20px 0;
         }
         
-        @keyframes gradient {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
+        @keyframes rainbow {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
         }
         
         .progress-container {
@@ -88,20 +87,11 @@
         }
         
         .progress-bar {
-            width: 30%;
+            width: 0%;
             height: 100%;
             background-color: #a158e0;
             border-radius: 20px;
-            animation: loading 3s ease-in-out infinite alternate;
-        }
-        
-        @keyframes loading {
-            0% {
-                width: 5%;
-            }
-            100% {
-                width: 75%;
-            }
+            transition: width 2.5s ease-in-out;
         }
         
         .message {
@@ -194,7 +184,7 @@
         </div>
         
         <div class="progress-container">
-            <div class="progress-bar"></div>
+            <div class="progress-bar" id="progressBar"></div>
         </div>
         
         <div class="message">we're prepping for you...</div>
@@ -210,12 +200,33 @@
     </div>
 
     <script>
-        // JavaScript for improved loading experience
+        // Dynamic progress bar animation
         document.addEventListener('DOMContentLoaded', function() {
+            const progressBar = document.getElementById('progressBar');
+            
+            // Start from 0%
+            progressBar.style.width = '0%';
+            
+            // After a short delay, begin animating to 100%
             setTimeout(function() {
-                document.querySelector('.progress-bar').style.transition = 'width 3s ease-in-out';
-                document.querySelector('.progress-bar').style.width = '30%';
-            }, 500);
+                progressBar.style.width = '100%';
+            }, 300);
+            
+            // Optional: Add pause points during loading
+            setTimeout(function() {
+                progressBar.style.transition = 'width 0.5s ease-in-out';
+                progressBar.style.width = '30%';
+                
+                setTimeout(function() {
+                    progressBar.style.transition = 'width 0.7s ease-in-out';
+                    progressBar.style.width = '60%';
+                    
+                    setTimeout(function() {
+                        progressBar.style.transition = 'width 1.3s ease-in-out';
+                        progressBar.style.width = '100%';
+                    }, 700);
+                }, 500);
+            }, 300);
         });
     </script>
 </body>
