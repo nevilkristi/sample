@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
   font-family: "Helvetica Neue";
   src: url("https://cdnjs.cloudflare.com/ajax/libs/helvetica-neue/9.0.0/helvetica-neue-light.woff2")
     format("woff2");
@@ -150,7 +150,6 @@ body {
   margin-right: 10px;
 }
 
-/* Responsive adjustments that maintain exact padding */
 @media (max-width: 768px) {
   .corner-design {
     width: 150px;
@@ -209,7 +208,7 @@ body {
   }
 }
 
-/* Extra small screens */
+
 @media (max-width: 360px) {
   .top-text {
     font-size: 40px;
@@ -226,4 +225,24 @@ body {
   .cooking-soon {
     margin-bottom: 30px;
   }
+} */
+
+html {
+  background-image: url("websitetemporaryfrontpage.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
 }
+
+img {
+  width: 100vw;
+  height: 100vh;
+  border: none;
+  outline: none;
+}
+
+/* body {
+  background-color: #d4c5ae;
+} */
