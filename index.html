@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Something Etcy - Coming Soon</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #e2d9c8;
+            color: #4a3f30;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 600px;
+        }
+        
+        .corner-design {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 200px;
+            height: 220px;
+            background-color: #b39060;
+            border-radius: 0 0 0 80%;
+        }
+        
+        .heading {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        
+        .top-text {
+            color: #c5b89c;
+            font-size: 4rem;
+            font-weight: bold;
+            margin-bottom: -20px;
+        }
+        
+        .colorful-text {
+            font-size: 5rem;
+            font-weight: bold;
+            background-image: linear-gradient(90deg, #ff00cc, #3333ff, #ff6600, #cc33ff);
+            background-size: 400% 400%;
+            animation: gradient 5s ease infinite;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+            margin: 20px 0;
+        }
+        
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        
+        .progress-container {
+            width: 200px;
+            height: 40px;
+            background-color: #b39060;
+            border-radius: 20px;
+            overflow: hidden;
+            margin: 20px auto;
+            position: relative;
+        }
+        
+        .progress-bar {
+            width: 30%;
+            height: 100%;
+            background-color: #a158e0;
+            border-radius: 20px;
+            animation: loading 3s ease-in-out infinite alternate;
+        }
+        
+        @keyframes loading {
+            0% {
+                width: 5%;
+            }
+            100% {
+                width: 75%;
+            }
+        }
+        
+        .message {
+            font-size: 1.5rem;
+            margin: 15px 0;
+            color: #876c40;
+        }
+        
+        .cooking-soon {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #876c40;
+            margin: 15px 0;
+        }
+        
+        .follow-text {
+            font-size: 1.2rem;
+            margin: 30px 0 10px;
+            color: #876c40;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #876c40;
+            font-size: 1.8rem;
+            text-decoration: none;
+            margin-top: 5px;
+        }
+        
+        .social-link img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .corner-design {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .top-text {
+                font-size: 3rem;
+            }
+            
+            .colorful-text {
+                font-size: 3.5rem;
+            }
+            
+            .cooking-soon {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .corner-design {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .top-text {
+                font-size: 2.5rem;
+            }
+            
+            .colorful-text {
+                font-size: 3rem;
+            }
+            
+            .cooking-soon {
+                font-size: 1.8rem;
+            }
+            
+            .progress-container {
+                width: 180px;
+                height: 35px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="corner-design"></div>
+    
+    <div class="container">
+        <div class="heading">
+            <div class="top-text">something</div>
+            <div class="colorful-text">etcyting</div>
+        </div>
+        
+        <div class="progress-container">
+            <div class="progress-bar"></div>
+        </div>
+        
+        <div class="message">we're prepping for you...</div>
+        <div class="cooking-soon">....cooking soon....</div>
+        
+        <div class="follow-text">meanwhile follow us here</div>
+        <a href="https://instagram.com/etcyfoods" class="social-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+            etcyfoods
+        </a>
+    </div>
+
+    <script>
+        // JavaScript for improved loading experience
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+                document.querySelector('.progress-bar').style.transition = 'width 3s ease-in-out';
+                document.querySelector('.progress-bar').style.width = '30%';
+            }, 500);
+        });
+    </script>
+</body>
+</html>
