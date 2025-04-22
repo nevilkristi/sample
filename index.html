@@ -1,285 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Something Etcy - Coming Soon</title>
     <!-- Adding Helvetica Neue font -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-face-observer/1.0.0/font-face-observer.min.js">
-    <style>
-        @font-face {
-            font-family: 'Helvetica Neue';
-            src: url('https://cdnjs.cloudflare.com/ajax/libs/helvetica-neue/9.0.0/helvetica-neue-light.woff2') format('woff2');
-            font-weight: 300;
-            font-style: normal;
-        }
-        
-        @font-face {
-            font-family: 'Helvetica Neue';
-            src: url('https://cdnjs.cloudflare.com/ajax/libs/helvetica-neue/9.0.0/helvetica-neue-bold.woff2') format('woff2');
-            font-weight: 700;
-            font-style: normal;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            background-color: #e2d9c8;
-            color: #4a3f30;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            text-align: center;
-            padding: 20px;
-            overflow-x: hidden;
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-weight: 300;
-        }
-        
-        .container {
-            width: 100%;
-            max-width: 600px;
-            padding: 0 20px;
-        }
-        
-        .corner-design {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 200px;
-            height: 220px;
-            background-color: #b39060;
-            border-radius: 0 0 0 80%;
-        }
-        
-        .heading {
-            position: relative;
-            margin-bottom: 40px;
-        }
-        
-        .top-text {
-            color: #c5b89c;
-            font-size: 72px;
-            font-weight: 700;
-            letter-spacing: -1px;
-            margin-bottom: -10px;
-            line-height: 1;
-        }
-        
-        .colorful-text {
-            font-size: 88px;
-            font-weight: 700;
-            letter-spacing: -1px;
-            margin-top:-16px;
-            background: linear-gradient(90deg, 
-                rgba(112, 48, 255, 1) 0%, 
-                rgba(47, 201, 226, 1) 20%, 
-                rgba(149, 55, 196, 1) 40%, 
-                rgba(233, 30, 99, 1) 60%, 
-                rgba(255, 87, 51, 1) 80%, 
-                rgba(255, 193, 7, 1) 100%);
-            background-size: 600% 100%;
-            animation: rainbow 8s linear infinite;
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: block;
-            margin: 0;
-        }
-        
-        @keyframes rainbow {
-            0% { background-position: 0% 50%; }
-            100% { background-position: 100% 50%; }
-        }
-        
-        .progress-container {
-            width: 200px;
-            height: 40px;
-            background-color: #b39060;
-            border-radius: 20px;
-            overflow: hidden;
-            margin: 0 auto 40px auto;
-            position: relative;
-        }
-        
-        .progress-bar {
-            width: 0%;
-            height: 100%;
-            background-color: #a158e0;
-            border-radius: 20px;
-            transition: width 2.5s ease-in-out;
-        }
-        
-        .message {
-            font-size: 24px;
-            font-weight: 400;
-            margin: 0 0 10px 0;
-            color: #876c40;
-        }
-        
-        .cooking-soon {
-            font-size: 40px;
-            font-weight: 700;
-            color: #876c40;
-            margin: 0 0 60px 0;
-        }
-        
-        .follow-text {
-            font-size: 20px;
-            font-weight: 400;
-            margin: 0 0 15px 0;
-            color: #876c40;
-        }
-        
-        .social-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #876c40;
-            font-size: 28px;
-            font-weight: 700;
-            text-decoration: none;
-            margin-top: 0;
-        }
-        
-        .social-link svg {
-            margin-right: 10px;
-        }
-        
-        /* Responsive adjustments that maintain exact padding */
-        @media (max-width: 768px) {
-            .corner-design {
-                width: 150px;
-                height: 150px;
-            }
-            
-            .top-text {
-                font-size: 56px;
-            }
-            
-            .colorful-text {
-                font-size: 68px;
-            }
-            
-            .cooking-soon {
-                font-size: 36px;
-                margin-bottom: 50px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .corner-design {
-                width: 100px;
-                height: 100px;
-            }
-            
-            .top-text {
-                font-size: 44px;
-            }
-            
-            .colorful-text {
-                font-size: 56px;
-            }
-            
-            .cooking-soon {
-                font-size: 30px;
-                margin-bottom: 40px;
-            }
-            
-            .progress-container {
-                width: 180px;
-                height: 35px;
-                margin-bottom: 30px;
-            }
-            
-            .message {
-                font-size: 20px;
-            }
-            
-            .follow-text {
-                font-size: 18px;
-            }
-            
-            .social-link {
-                font-size: 24px;
-            }
-        }
-        
-        /* Extra small screens */
-        @media (max-width: 360px) {
-            .top-text {
-                font-size: 40px;
-            }
-            
-            .colorful-text {
-                font-size: 48px;
-            }
-            
-            .heading {
-                margin-bottom: 30px;
-            }
-            
-            .cooking-soon {
-                margin-bottom: 30px;
-            }
-        }
-    </style>
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-face-observer/1.0.0/font-face-observer.min.js"
+    />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
     <div class="corner-design"></div>
-    
+
     <div class="container">
-        <div class="heading">
-            <div class="top-text">something</div>
-            <div class="colorful-text">etcyting</div>
-        </div>
-        
-        <div class="progress-container">
-            <div class="progress-bar" id="progressBar"></div>
-        </div>
-        
-        <div class="message">we're prepping for you...</div>
-        <div class="cooking-soon">....cooking soon....</div>
-        
-        <div class="follow-text">meanwhile follow us here</div>
-        <a href="https://instagram.com/etcyfoods" class="social-link">
-            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-            </svg>
-            etcyfoods
-        </a>
+      <div class="heading">
+        <div class="top-text">something</div>
+        <div class="colorful-text">etcyting</div>
+      </div>
+
+      <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+
+      <div class="message">we're prepping for you...</div>
+      <div class="cooking-soon">....cooking soon....</div>
+
+      <div class="follow-text">meanwhile follow us here</div>
+      <a href="https://instagram.com/etcyfoods" class="social-link">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="30"
+          height="30"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+        >
+          <path
+            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+          />
+        </svg>
+        etcyfoods
+      </a>
     </div>
 
     <script>
-        // Dynamic progress bar animation
-        document.addEventListener('DOMContentLoaded', function() {
-            const progressBar = document.getElementById('progressBar');
-            
-            // Start from 0%
-            progressBar.style.width = '0%';
-            
-            // Simulate loading progress
-            setTimeout(function() {
-                progressBar.style.transition = 'width 0.5s ease-in-out';
-                progressBar.style.width = '30%';
-                
-                setTimeout(function() {
-                    progressBar.style.transition = 'width 0.7s ease-in-out';
-                    progressBar.style.width = '60%';
-                    
-                    setTimeout(function() {
-                        progressBar.style.transition = 'width 1.3s ease-in-out';
-                        progressBar.style.width = '100%';
-                    }, 700);
-                }, 500);
-            }, 300);
-        });
+      // Dynamic progress bar animation
+      document.addEventListener("DOMContentLoaded", function () {
+        const progressBar = document.getElementById("progressBar");
+
+        // Start from 0%
+        progressBar.style.width = "0%";
+
+        // Simulate loading progress
+        setTimeout(function () {
+          progressBar.style.transition = "width 0.5s ease-in-out";
+          progressBar.style.width = "30%";
+
+          setTimeout(function () {
+            progressBar.style.transition = "width 0.7s ease-in-out";
+            progressBar.style.width = "60%";
+
+            setTimeout(function () {
+              progressBar.style.transition = "width 1.3s ease-in-out";
+              progressBar.style.width = "100%";
+            }, 700);
+          }, 500);
+        }, 300);
+      });
     </script>
-</body>
+  </body>
 </html>
